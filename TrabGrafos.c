@@ -41,6 +41,7 @@ int main() {
 
     printf("[CONFIGURACAO] Informe a escala da rede:\n");
     printf("-> Numero total de roteadores: ");
+
     if (scanf("%d", &V) != 1 || V <= 0) {
         printf("\n[ERRO] Quantidade invalida de roteadores.\n");
         return 1;
@@ -86,7 +87,9 @@ int main() {
     for (int v = 0; v < V; v++) { pai[v] = v; rank[v] = 0; }
 
     printf("\n--- RESULTADO DA OTIMIZACAO ---\n");
+    
     int conexoes_feitas = 0;
+
     for (int i = 0; i < E && conexoes_feitas < V - 1; i++) {
         int u = buscarRepresentante(pai, rede->lista_conexoes[i].origem);
         int v = buscarRepresentante(pai, rede->lista_conexoes[i].destino);
