@@ -69,7 +69,6 @@ int main() {
             while(getchar() != '\n'); // Limpa o buffer
             i--; continue;
         }
-
         if (rede->lista_conexoes[i].origem >= V || rede->lista_conexoes[i].destino >= V || 
             rede->lista_conexoes[i].origem < 0 || rede->lista_conexoes[i].destino < 0) {
             printf("[ERRO] Roteadores %d ou %d estao fora do limite (0 a %d)!\n", 
@@ -78,7 +77,6 @@ int main() {
         }
         custo_original += rede->lista_conexoes[i].peso;
     }
-
     printf("\n[PROCESSANDO] Calculando a Arvore Geradora Minima...\n");
     qsort(rede->lista_conexoes, E, sizeof(Conexao), compararConexoes);
 
@@ -89,7 +87,6 @@ int main() {
     printf("\n--- RESULTADO DA OTIMIZACAO ---\n");
     
     int conexoes_feitas = 0;
-
     for (int i = 0; i < E && conexoes_feitas < V - 1; i++) {
         int u = buscarRepresentante(pai, rede->lista_conexoes[i].origem);
         int v = buscarRepresentante(pai, rede->lista_conexoes[i].destino);
