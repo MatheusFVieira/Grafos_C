@@ -10,6 +10,7 @@
 
 ---
 
+
 ## 📖 Descrição do Problema
 
 Você é o responsável por configurar os roteadores do COLTEC. Os roteadores transmitem dados entre si por meio de cabos de rede, e esses dados podem percorrer uma ou mais rotas até chegar ao destino.
